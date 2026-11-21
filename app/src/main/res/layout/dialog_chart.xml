@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView android:id="@+id/tv_chart_title" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="20sp" android:textStyle="bold" android:gravity="center" android:layout_marginBottom="12dp"/>
+
+    <!-- Date Filters -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center">
+        <Button android:id="@+id/btn_chart_start_date" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="Start Date" style="?android:attr/buttonBarButtonStyle"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=" TO " android:textStyle="bold"/>
+        <Button android:id="@+id/btn_chart_end_date" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="End Date" style="?android:attr/buttonBarButtonStyle"/>
+        <Button android:id="@+id/btn_chart_clear" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Clear" android:textColor="#F44336" style="?android:attr/buttonBarButtonStyle"/>
+    </LinearLayout>
+
+    <!-- Chart Containers -->
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/bar_chart"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="16dp"
+        android:visibility="gone"/>
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/line_chart"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="16dp"
+        android:visibility="gone"/>
+
+    <Button android:id="@+id/btn_close_chart" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Close" android:layout_marginTop="16dp" android:backgroundTint="#757575"/>
+</LinearLayout>

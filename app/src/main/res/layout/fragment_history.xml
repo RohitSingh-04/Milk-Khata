@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5">
+
+    <!-- Date Filters & Totals -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="?android:attr/colorBackground"
+        android:elevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button android:id="@+id/btn_start_date" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="Start Date" style="?android:attr/buttonBarButtonStyle"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=" TO " android:textStyle="bold"/>
+            <Button android:id="@+id/btn_end_date" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="End Date" style="?android:attr/buttonBarButtonStyle"/>
+            <Button android:id="@+id/btn_clear_filter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Clear" android:textColor="#F44336" style="?android:attr/buttonBarButtonStyle"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <TextView android:id="@+id/tv_total_qty" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="Total Qty: 0.0" android:textSize="16sp" android:textStyle="bold"/>
+            <TextView android:id="@+id/tv_total_amount" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="Total Amt: 0.0" android:textSize="16sp" android:textStyle="bold" android:textColor="#4CAF50" android:gravity="end"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Wrapper for List and Floating Button -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Empty State -->
+        <TextView
+            android:id="@+id/tv_no_data"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="No data yet"
+            android:textSize="20sp"
+            android:visibility="gone"/>
+
+        <!-- The List -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_history"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="90dp"
+            android:background="?android:attr/colorBackground"
+            />
+
+        <!-- NEW: Floating Delete All Button -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_delete_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="90dp"
+            android:src="@android:drawable/ic_menu_delete"
+            app:backgroundTint="#F44336"
+            app:tint="@android:color/white"
+            android:contentDescription="Delete All" />
+    </RelativeLayout>
+</LinearLayout>

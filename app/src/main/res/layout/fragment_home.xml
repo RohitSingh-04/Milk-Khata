@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:paddingBottom="90dp"
+    android:clipToPadding="false">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="32dp">
+
+        <ImageView
+            android:id="@+id/iv_slip_preview"
+            android:layout_width="0dp"
+            android:layout_height="320dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone"
+            tools:src="@tools:sample/avatars" />
+
+        <ImageButton
+            android:id="@+id/btn_camera"
+            android:layout_width="94dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="8dp"
+            android:src="@android:drawable/ic_menu_camera"
+            app:layout_constraintEnd_toStartOf="@+id/btn_gallery"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_slip_preview" />
+
+        <ImageButton
+            android:id="@+id/btn_gallery"
+            android:layout_width="94dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="8dp"
+            android:src="@android:drawable/ic_menu_gallery"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btn_camera"
+            app:layout_constraintTop_toBottomOf="@+id/iv_slip_preview" />
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:text="Date"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_camera" />
+
+        <EditText
+            android:id="@+id/et_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="32dp"
+            android:hint="DD/MM/YYYY"
+            android:inputType="date"
+            android:textSize="20sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tv_date"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_date" />
+
+        <TextView
+            android:id="@+id/tv_qty"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:text="Qty"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_date" />
+
+        <EditText
+            android:id="@+id/et_qty"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="32dp"
+            android:hint="000.00"
+            android:inputType="numberDecimal"
+            android:textSize="20sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tv_qty"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_qty" />
+
+        <TextView
+            android:id="@+id/tv_rate"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:text="Rate"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_qty" />
+
+        <EditText
+            android:id="@+id/et_rate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="32dp"
+            android:hint="00.00"
+            android:inputType="numberDecimal"
+            android:textSize="20sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tv_rate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_rate" />
+
+        <TextView
+            android:id="@+id/tv_amount"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:text="Amount"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_rate" />
+
+        <EditText
+            android:id="@+id/et_amount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="32dp"
+            android:hint="0000.00"
+            android:inputType="numberDecimal"
+            android:textSize="20sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tv_amount"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_amount" />
+
+        <TextView
+            android:id="@+id/tv_incentive"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:text="Incentive"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_amount" />
+
+        <EditText
+            android:id="@+id/et_incentive"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="32dp"
+            android:hint="000.00"
+            android:inputType="numberDecimal"
+            android:textSize="20sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tv_incentive"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_incentive" />
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="#4CAF50"
+            android:text="Save"
+            app:layout_constraintEnd_toStartOf="@+id/btn_discard"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_incentive" />
+
+        <Button
+            android:id="@+id/btn_discard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="#F44336"
+            android:text="Discard"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btn_save"
+            app:layout_constraintTop_toBottomOf="@+id/et_incentive" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
